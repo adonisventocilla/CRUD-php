@@ -67,9 +67,9 @@
         }
         //--------------------------------------------------------------------------------------
 
-        public function obtenerData()
+        public function obtenerData($tabla)
         {
-            $this->db->query('SELECT * FROM instituciones');
+            $this->db->query('SELECT * FROM '. $tabla);
             $resultados = $this->db->registros();
             return $resultados;
         }

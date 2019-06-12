@@ -52,10 +52,11 @@
 
                 //obtener los datos
             $instituciones = $this->usuarioModelo->obtenerData('instituciones');
-            // $linea_inv = $this->usuarioModelo->obtenerData('linea_inv');
+            $linea_inv = $this->usuarioModelo->obtenerData('linea_inv');
                 $datos = [
                     
-                    'instituciones' => $instituciones
+                    'instituciones' => $instituciones,
+                    'linea_inv' => $linea_inv
                 ];
 
                 $this->vista('paginas/agregar', $datos);
