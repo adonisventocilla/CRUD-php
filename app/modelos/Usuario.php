@@ -65,27 +65,5 @@
                 return false;
             }
         }
-        //--------------------------------------------------------------------------------------
-
-        public function obtenerData($tabla)
-        {
-            $this->db->query('SELECT * FROM '. $tabla);
-            $resultados = $this->db->registros();
-            return $resultados;
-        }
-        
-        // public function validarUsuario($datos){
-        //     $this->db->query("SELECT * FROM usuarios WHERE usuario= :user and clave= :pass");
-        //     $this->db->bind(':user', $datos['user']);
-        //     $this->db->bind(':pass', $datos['pass']);
-
-        //     //Ejecutar y retornar
-        //     if ($this->db->rowCount()) {
-        //         return true;
-        //     }else {
-        //         return false;
-        //     }
-            
-        // }
     }
 ?>

@@ -6,11 +6,11 @@
             <th>Nombre</th>
             <th>Email</th>
             <th>Telefono</th>
-            <th colspan="2"><center>Acciones</center></th>
+            <th>Acciones</th>
         </tr>
     </thead>
     
-    <!-- <tbody>
+    <tbody>
     <?php foreach($datos['usuarios'] as $usuario): ?>
         <tr>
             <td><?php echo $usuario->id_usuario; ?></td>
@@ -21,7 +21,6 @@
             <td><a href="<?php echo RUTA_URL; ?>/paginas/borrar/<?php echo $usuario->id_usuario; ?>">Borrar</a></td>
         </tr>
     <?php endforeach; ?>
-    </tbody> -->
+    </tbody>
 </table>
-
 <?php require RUTA_APP . '/vistas/inc/footer.php';?>

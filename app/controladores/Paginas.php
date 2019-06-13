@@ -4,24 +4,6 @@
             $this->usuarioModelo = $this->modelo('Usuario');
         }
 
-        // public function login(){
-            
-        //     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        //         $datos = [
-        //             'user' => trim($_POST['user']),
-        //             'pass' => trim($_POST['pass'])
-        //         ];
-
-        //         if ($this->usuarioModelo->validarUsuario($datos)) {
-        //             redireccionar('/paginas');
-        //         }else {
-        //             die('Algo salio mal');
-        //         }
-        //     }else {
-        //         $this->vista('paginas/inicio');
-        //     }
-        // }
-
         public function index(){
 
             //obtener los usuarios
@@ -36,33 +18,29 @@
 
         public function agregar(){
 
-            // if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            //     $datos = [
-            //         'nombre' => trim($_POST['nombre']),
-            //         'email' => trim($_POST['email']),
-            //         'telefono' => trim($_POST['telefono'])
-            //     ];
-
-            //     if ($this->usuarioModelo->agregarUsuario($datos)) {
-            //         redireccionar('/paginas');
-            //     }else {
-            //         die('Algo salio mal');
-            //     }
-            // }else{
-
-                //obtener los datos
-            $instituciones = $this->usuarioModelo->obtenerData('instituciones');
-            $linea_inv = $this->usuarioModelo->obtenerData('linea_inv');
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $datos = [
-                    
-                    'instituciones' => $instituciones,
-                    'linea_inv' => $linea_inv
+                    'nombre' => trim($_POST['nombre']),
+                    'email' => trim($_POST['email']),
+                    'telefono' => trim($_POST['telefono'])
+                ];
+
+                if ($this->usuarioModelo->agregarUsuario($datos)) {
+                    redireccionar('/paginas');
+                }else {
+                    die('Algo salio mal');
+                }
+            }else{
+                $datos = [
+                    'nombre' => '',
+                    'email' => '',
+                    'telefono' => ''
                 ];
 
                 $this->vista('paginas/agregar', $datos);
             }
 
-        
+        }
 
         public function editar($id){
 
